@@ -10,6 +10,7 @@ The app supports **document-grounded answers with source citations** as well as 
 
  **Deployed App**:  
  *(https://genai1-chat-pdf.streamlit.app/)*
+ *(https://youtu.be/NDC5MbefAjQ)*
 
 
 
