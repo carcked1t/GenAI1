@@ -1,33 +1,33 @@
 # GenAI Project- PDF Chat App with Optional General Knowledge Toggle
 
-# 📄 Chat with PDFs using Gemini (LangChain + Streamlit)
+#  Chat with PDFs using Gemini (LangChain + Streamlit)
 
 An interactive web application that allows users to **upload PDF documents and chat with them intelligently** using Google’s Gemini models.  
 The app supports **document-grounded answers with source citations** as well as an optional **mixed mode** where the model can combine document context with its own general knowledge.
 
 
-## 🌐 Live Demo
+##  Live Demo
 
-🔗 **Deployed App**:  
-👉 *(https://genai1-chat-pdf.streamlit.app/)*
+ **Deployed App**:  
+ *(https://genai1-chat-pdf.streamlit.app/)*
 
 
 
-## ✨ Features
+##  Features
 
-- 📂 Upload multiple PDF files
-- 🔍 Semantic search over document content using **FAISS**
-- 🤖 Question answering powered by **Google Gemini**
-- 📌 **Source citations** showing which document chunks were used
-- 🔀 Two answer modes:
-  - **Document-only mode** (strictly answers from PDFs)
-  - **Hybrid mode** (PDF + general knowledge)
-- ⚡ Optimized performance using Streamlit caching
-- 🔐 Secure API key handling via environment variables
+-  Upload multiple PDF files
+-  Semantic search over document content using **FAISS**
+-  Question answering powered by **Google Gemini**
+-  **Source citations** showing which document chunks were used
+-  Two answer modes:
+   **Document-only mode** (strictly answers from PDFs)
+   **Hybrid mode** (PDF + general knowledge)
+-  Optimized performance using Streamlit caching
+-  Secure API key handling via environment variables
 
----
 
-## 🛠 Tech Stack
+
+##  Tech Stack
 
 - **Frontend / UI**: Streamlit
 - **LLM**: Google Gemini (via `langchain-google-genai`)
@@ -36,9 +36,9 @@ The app supports **document-grounded answers with source citations** as well as 
 - **PDF Parsing**: PyPDF2
 - **Framework**: LangChain (modular v0.1+ architecture)
 
----
 
-## 🚀 How It Works (High-Level)
+
+##  How It Works
 
 1. User uploads one or more PDFs
 2. PDFs are:
@@ -51,9 +51,9 @@ The app supports **document-grounded answers with source citations** as well as 
    - Gemini generates an answer
    - Source chunks are returned as citations
 
-## 🧪 Answer Modes Explained
+##  Answer Modes Explained
 
-### 📘 Document-Only Mode
+###  Document-Only Mode
 - The model is **restricted** to the retrieved PDF context
 - If the answer is not found, it explicitly says so
 - Ideal for:
@@ -61,7 +61,7 @@ The app supports **document-grounded answers with source citations** as well as 
   - Legal / policy documents
   - Notes and reports
 
-### 🌍 Hybrid Mode
+###  Hybrid Mode
 - The model can:
   - Use document context **first**
   - Supplement with general knowledge if needed
@@ -71,28 +71,28 @@ The app supports **document-grounded answers with source citations** as well as 
   - Concept clarification
 
 
-## 🧑‍💻 Running Locally
+##  Running Locally
 
-### 1️⃣ Clone the repository
+### 1️ Clone the repository
 ```bash
 git clone https://github.com/carcked1t/GenAI1.git
 cd GenAI1
 ````
 
-### 2️⃣ Create a virtual environment
+### 2️ Create a virtual environment
 
 ```bash
 python -m venv venv
 source venv/bin/activate   # Windows: venv\Scripts\activate
 ```
 
-### 3️⃣ Install dependencies
+### 3️ Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4️⃣ Add environment variables
+### 4️ Add environment variables
 
 Create a `.env` file:
 
@@ -100,15 +100,15 @@ Create a `.env` file:
 GOOGLE_API_KEY=your_api_key_here
 ```
 
-### 5️⃣ Run the app
+### 5️ Run the app
 
 ```bash
 streamlit run app.py
 ```
 
----
 
-## 📁 Project Structure
+
+##  Project Structure
 
 ```
 GenAI1/
@@ -126,7 +126,7 @@ GenAI1/
 
 ## ⚠️ Challenges Faced & Solutions
 
-### 1️⃣ LangChain Import Errors
+### 1️ LangChain Import Errors
 
 **Issue:**
 Frequent `ModuleNotFoundError` due to breaking changes in LangChain.
@@ -140,7 +140,7 @@ Migrated to the new modular structure:
 
 ---
 
-### 2️⃣ Gemini Model Availability Errors
+### 2️ Gemini Model Availability Errors
 
 **Issue:**
 Some Gemini model names returned `404 NOT_FOUND`.
@@ -151,7 +151,7 @@ Verified model availability via Google’s API documentation.
 
 ---
 
-### 3️⃣ Slow Streamlit Reloads
+### 3️ Slow Streamlit Reloads
 
 **Issue:**
 Every interaction reloaded embeddings and models.
@@ -171,7 +171,7 @@ to cache:
 
 ---
 
-### 4️⃣ “Answer Not Found” for All Queries
+### 4️ “Answer Not Found” for All Queries
 
 **Issue:**
 Prompt was too restrictive and context retrieval was insufficient.
@@ -184,7 +184,7 @@ Prompt was too restrictive and context retrieval was insufficient.
 
 ---
 
-### 5️⃣ API Quota Exhaustion
+### 5️ API Quota Exhaustion
 
 **Issue:**
 Free Gemini quota exhausted during testing.
@@ -199,17 +199,16 @@ Free Gemini quota exhausted during testing.
 
 ## How This Is Different from Typical “Chat with PDF” Apps
 
-* ✅ **Clear separation between document-only and hybrid reasoning**
-* ✅ **Explicit source citations**, not just answers
-* ✅ Built with **modern LangChain architecture**
-* ✅ Optimized for real deployment, not just demos
-* ✅ Transparent failure handling (e.g., “answer not found”)
+*  **Clear separation between document-only and hybrid reasoning**
+*  **Explicit source citations**, not just answers
+*  Built with **modern LangChain architecture**
+*  Optimized for real deployment, not just demos
+*  Transparent failure handling (e.g., “answer not found”)
 
-Rather than aiming to be flashy, this project focuses on **reliability, clarity, and real-world usability**.
+This project focuses on **reliability, clarity, and real-world usability**.
 
----
 
-## 📌 Future Improvements
+##  Future Improvements
 * Conversation memory
 * Streaming responses
 * Support for DOCX / TXT files
